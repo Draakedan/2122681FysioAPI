@@ -18,7 +18,7 @@ namespace VerkisListDatabaseHandler.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(GetConnectionStringFromJson());
+            optionsBuilder.UseSqlServer("ConnStr");
         }
 
         private static string GetConnectionStringFromJson()
