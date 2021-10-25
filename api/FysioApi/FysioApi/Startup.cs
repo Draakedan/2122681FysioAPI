@@ -37,7 +37,7 @@ namespace FysioApi
             services.AddScoped<Query>();
             services.AddScoped<Mutation>();
             services.AddScoped<IDiagnoseService, DiagnoseService>();
-            services.AddGraphQL(c => SchemaBuilder.New().AddServices(c).AddType<GraphQLTypes>().AddQueryType<Query>().Create());
+            services.AddGraphQLServer().AddQueryType<Query>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -64,7 +64,6 @@ namespace FysioApi
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FysioApi v1"));
             app.UseHttpsRedirection();
 
-            app.UseGraphQL("/api");
             app.UseRouting();
 
             app.UseAuthorization();
@@ -72,6 +71,7 @@ namespace FysioApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGraphQL("/api");
             });
         }
     }
