@@ -74,5 +74,6 @@ namespace FysioApi
                 endpoints.MapGraphQL("/api");
             });
         }
+
     }
 }

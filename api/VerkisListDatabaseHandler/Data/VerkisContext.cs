@@ -18,7 +18,7 @@ namespace VerkisListDatabaseHandler.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=2122681fysio-server2021.database.windows.net,1433; Catalog=2122681verkisdb2021;User ID=Draakedan2122681;Password=t&83N@gW0uO;");
+            optionsBuilder.UseSqlServer("ConnStr");
         }
 
         private static string GetConnectionStringFromJson()
