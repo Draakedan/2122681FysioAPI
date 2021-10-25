@@ -23,10 +23,11 @@ namespace VerkisListDatabaseHandler.Data
 
         private static string GetConnectionStringFromJson()
         {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"data/Settings.json");
-            using StreamReader r = new(path);
-            String json = r.ReadToEnd();
-            return (string)JObject.Parse(json)["ConnectionStrings"]["DefaultConnection"];
+            //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"data/Settings.json");
+            //using StreamReader r = new(path);
+            //String json = r.ReadToEnd();
+            //return (string)JObject.Parse(json)["ConnectionStrings"]["DefaultConnection"];
+            return null;
         }
     }
 }
