@@ -23,7 +23,7 @@ namespace VerkisListDatabaseHandler
 
             foreach (Verrichting v in context.verrichtingen)
             {
-                Console.WriteLine($"{v.Id}\t{v.Waarde}\t{v.Omschrijving}\t{v.Toelichting_verplicht}");
+                Console.WriteLine($"{v.Id}\t{v.Waarde}\t{v.Omschrijving}\t{v.ToelichtingVerplicht}");
             }
             //Console.WriteLine("");
             //Console.WriteLine(GetJson("VektisLijstVerrichtingen.csv"));
