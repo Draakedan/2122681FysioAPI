@@ -13,21 +13,10 @@ namespace VerkisListDatabaseHandler.Data
 {
     public class VerkisContext : DbContext
     {
-        public DbSet<Diagnose> diagnoses { get; set; }
-        public DbSet<Verrichting> verrichtingen { get; set; }
+        public DbSet<Diagnose> Diagnoses { get; set; }
+        public DbSet<Verrichting> Verrichtingen { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("ConnStr");
-        }
-
-        private static string GetConnectionStringFromJson()
-        {
-            //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"data/Settings.json");
-            //using StreamReader r = new(path);
-            //String json = r.ReadToEnd();
-            //return (string)JObject.Parse(json)["ConnectionStrings"]["DefaultConnection"];
-            return null;
-        }
+        public VerkisContext(DbContextOptions<VerkisContext> contextOptions) : base(contextOptions)
+        { }
     }
 }

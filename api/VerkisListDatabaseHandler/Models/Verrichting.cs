@@ -17,6 +17,6 @@ namespace VerkisListDatabaseHandler.Models
         public int Id { get; set; }
         public string? Waarde { get; set; }
         public string? Omschrijving { get; set; }
-        public string? ToelichtingVerplicht { get; set; }
+        public string? Toelichting_verplicht { get; set; }
     }
 }

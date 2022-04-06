@@ -19,7 +19,7 @@ namespace FysioApi.Services
 
         public IQueryable<Diagnose> GetAll()
         {
-            return _context.diagnoses.AsQueryable();
+            return _context.Diagnoses.AsQueryable();
         }
 
         public IQueryable<Diagnose> GetSome(int codeStart)
@@ -27,7 +27,7 @@ namespace FysioApi.Services
             List<Diagnose> diagnoses = new();
             int code = codeStart * 100;
             int codeEnd = code + 1000;
-            foreach (Diagnose d in _context.diagnoses)
+            foreach (Diagnose d in _context.Diagnoses)
             {
                 if (d.Code > code && d.Code < codeEnd)
                     diagnoses.Add(d);
@@ -38,7 +38,7 @@ namespace FysioApi.Services
 
         public Diagnose getOne(int code)
         {
-            foreach (Diagnose d in _context.diagnoses)
+            foreach (Diagnose d in _context.Diagnoses)
                 if (d.Code == code)
                     return d;
             return null;

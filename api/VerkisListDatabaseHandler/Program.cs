@@ -15,19 +15,6 @@ namespace VerkisListDatabaseHandler
     {
         static void Main(string[] args)
         {
-            VerkisContext context = new();
-            foreach (Diagnose d in context.diagnoses)
-            {
-                //Console.WriteLine($"{d.Code}\t{d.lichaamslocalisatie}\t{d.pathologie}");
-            }
-
-            foreach (Verrichting v in context.verrichtingen)
-            {
-                Console.WriteLine($"{v.Id}\t{v.Waarde}\t{v.Omschrijving}\t{v.ToelichtingVerplicht}");
-            }
-            //Console.WriteLine("");
-            //Console.WriteLine(GetJson("VektisLijstVerrichtingen.csv"));
-
         }
 
     }

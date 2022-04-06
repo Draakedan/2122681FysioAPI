@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VerkisListDatabaseHandler.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace FysioApi
 {
@@ -33,7 +34,7 @@ namespace FysioApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<VerkisContext>();
+            services.AddDbContext<VerkisContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Verkis")));
             services.AddScoped<Query>();
             services.AddScoped<Mutation>();
             services.AddScoped<IDiagnoseService, DiagnoseService>();

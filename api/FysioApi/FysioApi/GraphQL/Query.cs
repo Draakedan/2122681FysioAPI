@@ -16,10 +16,10 @@ namespace FysioApi.GraphQL
             _diagnoseService = diagnoseService;
         }
 
-        public IQueryable<Diagnose> diagnoses => _diagnoseService.GetAll();
+        public IQueryable<Diagnose> Diagnoses => _diagnoseService.GetAll();
 
-        public IQueryable<Diagnose> some(int codeStart) => _diagnoseService.GetSome(codeStart);
+        public IQueryable<Diagnose> Some(int codeStart) => _diagnoseService.GetSome(codeStart);
 
-        public Diagnose get(int code) => _diagnoseService.getOne(code);
+        public Diagnose Get(int code) => _diagnoseService.getOne(code);
     }
 }

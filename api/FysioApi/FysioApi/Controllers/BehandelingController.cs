@@ -25,13 +25,13 @@ namespace FysioApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Verrichting>> GetAll()
         {
-            return Ok(_context.verrichtingen);
+            return Ok(_context.Verrichtingen);
         }
 
         [HttpGet("{code}")]
         public ActionResult<Verrichting> GetOne(string code)
         {
-            foreach (Verrichting v in _context.verrichtingen)
+            foreach (Verrichting v in _context.Verrichtingen)
                 if (v.Waarde.Equals(code))
                     return Ok(v);
             return NotFound();
@@ -41,7 +41,7 @@ namespace FysioApi.Controllers
         public ActionResult<List<Verrichting>> GetSome(string code)
         {
             List<Verrichting> verrichtings = new();
-            foreach (Verrichting v in _context.verrichtingen)
+            foreach (Verrichting v in _context.Verrichtingen)
                 if (v.Waarde.StartsWith(code))
                     verrichtings.Add(v);
             if (verrichtings.Count != 0)
